@@ -15,13 +15,13 @@ while True:
     if token_input[0] == 'q' or token_input[0] == 'quit':
         break
     else:
-        if token_input[0] == "+":
+        if token_input[0] == "+" or token_input[0] == "add":
             add(token_input[1], token_input[2])
-        if token_input[0] == "-":
+        if token_input[0] == "-" or token_input[0] == "subtract":
             subtract(token_input[1], token_input[2])
-        if token_input[0] == "*":
+        if token_input[0] == "*" or token_input[0] == "multiply":
             multiply(token_input[1], token_input[2])
-        if token_input[0] == "/":
+        if token_input[0] == "/" or token_input[0] == "divide":
             divide(token_input[1], token_input[2])
         if token_input[0] == "square":
             square(token_input[1])
