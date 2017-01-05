@@ -9,6 +9,13 @@ from arithmetic2 import *
 
 
 # Your code goes here
+def is_enough_operands(operands_list, arithmetic_function):
+    if len(operands_list) > 1:
+        print arithmetic_function
+    else:
+        print "Please enter enough integers."
+
+
 while True:
     user_input = raw_input("Input arithmetic function: ")
     token_input = user_input.split(" ")
@@ -26,20 +33,37 @@ while True:
         break
     else:
         if operator == "+" or operator == "add":
-            print add(integers_list)
+            is_enough_operands(integers_list, add(integers_list))
         elif operator == "-" or operator == "subtract":
-            print subtract(integers_list)
+            is_enough_operands(integers_list, subtract(integers_list))
         elif operator == "*" or operator == "multiply":
-            print multiply(integers_list)
+            is_enough_operands(integers_list, multiply(integers_list))
+        
         elif operator == "/" or operator == "divide":
-            print divide(integers_list[0], integers_list[1])
-        elif operator == "square":
-            print square(integers_list[0])
-        elif operator == "cube":
-            print cube(integers_list[0])
-        elif operator == "pow":
-            print power(integers_list[0], integers_list[1])
+            if len(integers_list) == 2:
+                print (divide(integers_list[0], integers_list[1]))
+            else:
+                print "Please enter two integers."
+        elif operator == "power":
+            if len(integers_list) == 2:
+                print (power(integers_list[0], integers_list[1]))
+            else:
+                print "Please enter two integers."
         elif operator == "mod":
-            print mod(integers_list[0], integers_list[1])
+            if len(integers_list) == 2:
+                print (mod(integers_list[0], integers_list[1]))
+            else:
+                print "Please enter two integers."
+
+        elif operator == "square":
+            if len(integers_list) == 1:
+                print (square(integers_list[0]))
+            else:
+                print "Please enter a single integer."
+        elif operator == "cube":
+            if len(integers_list) == 1:
+                print (cube(integers_list[0]))
+            else:
+                print "Please enter a single integer."
         else:
             print "Please enter valid operator."
