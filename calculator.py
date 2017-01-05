@@ -12,28 +12,40 @@ from arithmetic import *
 while True:
     user_input = raw_input("Input arithmetic function: ")
     token_input = user_input.split(" ")
+    integers_list = []
+
+    try:
+        for token in token_input[1:]:
+            integers_list.append(int(token))
+    except:
+        print "Please enter a list with valid integers."
+        continue
+
     if token_input[0] == 'q' or token_input[0] == 'quit':
         break
     else:
         try:
             if token_input[0] == "+" or token_input[0] == "add":
-                print add(int(token_input[1]), int(token_input[2]))
+                reduced_output = reduce(lambda a, b: a + b, integers_list[1:])
+                print add(integers_list[0], reduced_output)
             elif token_input[0] == "-" or token_input[0] == "subtract":
-                print subtract(int(token_input[1]), int(token_input[2]))
+                reduced_output = reduce(lambda a, b: a - b, integers_list[0:-1])
+                print subtract(reduced_output, integers_list[-1])
             elif token_input[0] == "*" or token_input[0] == "multiply":
-                print multiply(int(token_input[1]), int(token_input[2]))
+                reduced_output = reduce(lambda a, b: a * b, integers_list[1:])
+                print multiply(integers_list[0], reduced_output)
             elif token_input[0] == "/" or token_input[0] == "divide":
-                print divide(int(token_input[1]), int(token_input[2]))
+                reduced_output = reduce(lambda a, b: a / b, integers_list[0:-1])
+                print divide(reduced_output, integers_list[-1])
             elif token_input[0] == "square":
-                print square(int(token_input[1]))
+                print square(integers_list[0])
             elif token_input[0] == "cube":
-                print cube(int(token_input[1]))
+                print cube(integers_list[0])
             elif token_input[0] == "pow":
-                print power(int(token_input[1]), int(token_input[2]))
+                print power(integers_list[0], integers_list[1])
             elif token_input[0] == "mod":
-                print mod(int(token_input[1]), int(token_input[2]))
+                print mod(integers_list[0], integers_list[1])
             else:
                 print "Please enter valid operator."
         except:
             print "Please enter valid integer."
-    
