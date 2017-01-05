@@ -1,14 +1,23 @@
-def add(num1, num2):
-    """Return the sum of two numbers"""
-    return num1 + num2
+def add(num_list):
+    """Return the sum of a list of numbers"""
+    total = 0
+    for num in num_list:
+        total += num
+    return total
 
-def subtract(num1, num2):
-    """Return the difference of two numbers"""
-    return num1 - num2
+def subtract(num_list):
+    """Return the difference of a list of numbers"""
+    difference = num_list[0]
+    for num in num_list[1:]:
+        difference -= num
+    return difference
 
-def multiply(num1, num2):
-    """Return the product of two numbers"""
-    return num1 * num2
+def multiply(num_list):
+    """Return the product of a list of numbers"""
+    total = 1
+    for num in num_list:
+        total *= num
+    return total
 
 def divide(num1, num2):
     """Return the quotient of two numbers as a float"""
