@@ -18,19 +18,22 @@ while True:
         try:
             if token_input[0] == "+" or token_input[0] == "add":
                 print add(int(token_input[1]), int(token_input[2]))
-            if token_input[0] == "-" or token_input[0] == "subtract":
+            elif token_input[0] == "-" or token_input[0] == "subtract":
                 print subtract(int(token_input[1]), int(token_input[2]))
-            if token_input[0] == "*" or token_input[0] == "multiply":
+            elif token_input[0] == "*" or token_input[0] == "multiply":
                 print multiply(int(token_input[1]), int(token_input[2]))
-            if token_input[0] == "/" or token_input[0] == "divide":
+            elif token_input[0] == "/" or token_input[0] == "divide":
                 print divide(int(token_input[1]), int(token_input[2]))
-            if token_input[0] == "square":
+            elif token_input[0] == "square":
                 print square(int(token_input[1]))
-            if token_input[0] == "cube":
+            elif token_input[0] == "cube":
                 print cube(int(token_input[1]))
-            if token_input[0] == "pow":
+            elif token_input[0] == "pow":
                 print power(int(token_input[1]), int(token_input[2]))
-            if token_input[0] == "mod":
+            elif token_input[0] == "mod":
                 print mod(int(token_input[1]), int(token_input[2]))
+            else:
+                print "Please enter valid operator."
         except:
             print "Please enter valid integer."
+    
