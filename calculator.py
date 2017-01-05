@@ -16,18 +16,18 @@ while True:
         break
     else:
         if token_input[0] == "+" or token_input[0] == "add":
-            add(token_input[1], token_input[2])
+            print add(int(token_input[1]), int(token_input[2]))
         if token_input[0] == "-" or token_input[0] == "subtract":
-            subtract(token_input[1], token_input[2])
+            print subtract(int(token_input[1]), int(token_input[2]))
         if token_input[0] == "*" or token_input[0] == "multiply":
-            multiply(token_input[1], token_input[2])
+            print multiply(int(token_input[1]), int(token_input[2]))
         if token_input[0] == "/" or token_input[0] == "divide":
-            divide(token_input[1], token_input[2])
+            print divide(int(token_input[1]), int(token_input[2]))
         if token_input[0] == "square":
-            square(token_input[1])
+            print square(int(token_input[1]))
         if token_input[0] == "cube":
-            cube(token_input[1])
+            print cube(int(token_input[1]))
         if token_input[0] == "pow":
-            power(token_input[1], token_input[2])
+            print power(int(token_input[1]), int(token_input[2]))
         if token_input[0] == "mod":
-            mod(token_input[1], token_input[2])
+            print mod(int(token_input[1]), int(token_input[2]))
